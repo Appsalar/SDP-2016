@@ -15,6 +15,30 @@ void print(int v[], int n)
 	std::cout << std::endl;
 }
 
+// това е най-простият аглоритъм за генериране на пермутации 
+// и на базата на тази конструкция, могат да бъдат генерирани 
+// останалите комбинаторни обекти 
+void permSimple(int v[], int n, bool used[], int k = 0)
+{
+	if (k >= n)
+	{
+		print(v, n);
+		return;
+	}
+
+	for (int i = 1; i <= n; i++)
+	{
+		if (used[i - 1] == false)
+		{
+			used[i - 1] = true;
+			v[k] = i;
+			permSimple(v, n, used, k + 1);
+			used[i - 1] = false;
+		}
+	}
+}
+
+
 void perm(int v[], int n, int k) {
 
 	if (k == n) {
@@ -58,12 +82,52 @@ void comb(int v[], int n, int maxK, int start = 1, int k = 0)
 		return;
 	}
 
-	for (int i = start; i <= n; i++)
+	// в цикъла може да е до n, няма да бъде оптимизиран 
+	// # Минко > Преслав Наков
+	for (int i = start; i <= n - maxK + k + 1; i++)
 	{
 		v[k] = i;
-		comb(v, n, maxK, i + 1, k + 1); // i вместо i + 1 за повторения 
+		comb(v, n, maxK, i + 1, k + 1);
 	}
 }
+
+
+void combMulti(int v[], int n, int maxK, int start = 1, int k = 0)
+{
+	if (k >= maxK)
+	{
+		print(v, maxK);
+		return;
+	}
+
+	for (int i = start; i <= n + 1; i++)
+	{
+		v[k] = i;
+		comb(v, n, maxK, i, k + 1);
+	}
+}
+
+
+void var(int v[], int n, int maxK, bool used[], int k = 0)
+{
+	if (k >= maxK)
+	{
+		print(v, maxK);
+		return;
+	}
+
+	for (int i = 1; i <= n; i++)
+	{
+		if (used[i - 1] == false)
+		{
+			used[i - 1] = true;
+			v[k] = i;
+			var(v, n, maxK, used, k + 1);
+			used[i - 1] = false;
+		}
+	}
+}
+
 
 void varMulti(int v[], int n, int maxK, int k = 0)
 {
@@ -83,16 +147,23 @@ void varMulti(int v[], int n, int maxK, int k = 0)
 
 int main()
 {
-	const int n = 5;
-	int k = 2;
-	int v[n];
+	const int N = 4;
+	int K = 2;
+	int v[N];
+	bool used[N];
 
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < N; i++)
 		v[i] = i + 1;
-	//perm(v, n, 0);
-	//heap_perm(v, n);
-	//comb(v, n, k);
-	varMulti(v, n, k);
+
+	for (int i = 0; i < N; i++)
+		used[i] = false;
+
+	//perm(v, N, 0);
+	//heap_perm(v, N);
+	//comb(v, N, K);
+	//var(v, N, K, used);
+	//varMulti(v, N, K);
+	permSimple(v, N, used);
 
 	return 0;
 }
