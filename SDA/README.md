@@ -29,9 +29,11 @@ http://www.cplusplus.com/doc/tutorial/
 но само за УП. 
 
 Това е гитхъб-а на Трифон и тук можете да намерите всичкия код, който е писал на лекции 
+
 https://github.com/triffon 
 
 Това е на Семерджиев 
+
 https://github.com/semerdzhiev 
 
 Армянов качва код като zip архиви в мудъл и неговия можете да го търсите само там. 
@@ -43,6 +45,7 @@ https://github.com/semerdzhiev
 
 Това е доста подробно обяснение и мисля че обхваща всичко, което трябва да знаете 
 за указатели и псевдоними 
+
 https://www.ntu.edu.sg/home/ehchua/programming/cpp/cp4_PointerReference.html
 
 #Потоци 
@@ -53,22 +56,29 @@ https://www.ntu.edu.sg/home/ehchua/programming/cpp/cp4_PointerReference.html
 Туториялите за потоци са много добри и в 3-те гореспоменатите сайтове. 
 
 Това са обяснения за битови маски 
+
 http://codeforces.com/blog/entry/18169 
+
 http://informatika.bg/lectures/bitwise-operations 
 
 Това е кода от лекциите на Семерджиев от 2014
+
 https://github.com/semerdzhiev/oop-samples/tree/master/Files
 
 Това са прости примери за работа с файлови потоци 
+
 https://github.com/Appsalar/OOP/tree/master/Week2 
 
 Това са още примери за работа с текстови файлове и са подробно документирани 
+
 https://github.com/Appsalar/OOP/tree/master/Week3 
 
 Това са прости примери за работа с бинарни файлове 
+
 https://github.com/Appsalar/OOP/tree/master/Week4 
 
 Още примери за работа с бинарни файлове 
+
 https://github.com/Appsalar/OOP/tree/master/Week5 
 
 
